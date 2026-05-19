@@ -1,6 +1,7 @@
 # Assignment Day 1
 
-This project is created to explore the way to exploit the security vulnerabilities. This is in reference to the assignmnet as menntioned in Day 1 Assignment
+**Objective:** Identify each vulnerability type from scratch, document findings the way a security tester would, explain the root cause behind each issue, and write QA test cases that would catch them before they ship. 
+This project is created to explore the way to exploit the application to detect security concerns. All the question are answered as per the reference of Day 1 Assignment
 
 ## Use Case #
 The development team has shipped a new internal build of OWASP Juice Shop and it needs to be reviewed across six OWASP Top 10 categories before it progresses to UAT. Your job is to test the new build for various vulnerabilities.
