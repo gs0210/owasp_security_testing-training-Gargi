@@ -1,11 +1,10 @@
-# Assignment Day 1 #
+# Assignment Day 1
 
 This project is created to explore the way to exploit the security vulnerabilities. This is in reference to the assignmnet as menntioned in Day 1 Assignment
----
 
 ## Use Case #
 The development team has shipped a new internal build of OWASP Juice Shop and it needs to be reviewed across six OWASP Top 10 categories before it progresses to UAT. Your job is to test the new build for various vulnerabilities.
----
+
 
 ## Broken Access Control and Injection ##
 ### Post a product review as another user or edit any user’s existing review. ##
@@ -49,7 +48,7 @@ This is an example of Broken Access Control and it can lead to major consequence
 #### Summary ####
 This is an example of Vertical Privilege Escalation where a user access the admin rights or priviliges and perform operation which is authorised for the user above the hierachy of current user. In this scenario, an application fails to identify the user and logged it via query (|| 1=1) which evaluates to true and returns probably the default value. 
 Apart from that the user is also able to perform the operations that are exclusive to the users with certain access/privliges indicating that the access or abstraction is not enforced correctly.
----
+
 
 ## Security Misconfiguration ##
 ### HTTP Security Headers Inspection ###
@@ -92,7 +91,7 @@ kdbx files are kind of password database which stores all the credentials includ
 
 *File with potential risk:* premium.key
 This seems to be the encrypted version of the private key, JWT token or some authentication method. Once decrypted, it can lead to unauthorised access.
----
+
 
 ## Supply Chain Failures ###
 
@@ -167,23 +166,18 @@ It is effectient and cheap to have security testing at the earliest stage of app
 
 4. **If you had to pick just three test cases to add to every project's regression suite based on what you discovered today, what would they be and why?**
 
-1. **Broken Access Control** : 
-**Validate that any certain operation is only performed by authorised user.**
+- **Broken Access Control** : 
+    - **Validate that any certain operation is only performed by authorised user.**
 With the above failures, the attacker can gain unauthorised access to personal data or internal documents etc. This will lead to unauthorised data manipulation, integrity issues, revealation of sensitive data and failure of business logic.
 
-2. **Security Misconfiguration**
-**Validate that all the HTTP Security Headers has the apt value to protect the application from any malicious code execution.**
-This protects the browser behaviour and prevent the attacker to utilse the browser behaviour to exploit the application
+- **Security Misconfiguration**
+    - **Validate that all the HTTP Security Headers has the apt value to protect the application from any malicious code execution.**
+    This protects the browser behaviour and prevent the attacker to utilse the browser behaviour to exploit the application
 
-**Validate that no directories or file can be exposed by navigating to certain paths such as /ftp etc.**
+    - **Validate that no directories or file can be exposed by navigating to certain paths such as /ftp etc.**
 This will block the attacker to access the confidential resources of the application such as kdbx, package.json etc.
 
 5. **Personal reflection (5–7 sentences): What changed in how you think about testing? Which vulnerability surprised you the most and why?**
 
 - Before learning about web application security testing, I thought testing was mainly about checking whether the application works properly. After this experience, I realized that testing is also about finding security weaknesses that could be abused by attackers. 
 The vulnerability that surprised me the most was Directory and File Exposure because it can expose sensitive information very easily. I was surprised that simply accessing exposed folders or backup files could reveal important data such as source code, configuration files or internal documents. It also showed me that even a small configuration mistake can create a serious security issue.
-
-
-
-
-
