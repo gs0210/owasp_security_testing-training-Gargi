@@ -28,7 +28,7 @@ The development team has shipped a new internal build of OWASP Juice Shop and it
 ![Web UI of edited message](./screenshots/Task1/editedReviewUI.png)
 
 #### Summary ####
-Here, the application fails to validate if a user is authorised to perform certain operation on an application. In this scenario, the application validates only if the user is authenticated or logged in, but it doesn't check if the user has an access to edit the comment with id that doesn't concern the currently authenticated user.
+Here, the application fails to validate if a user is authorised to perform certain operation on an application. In this scenario, the application validates only if the user is authenticated or logged in, but it doesn't check if the user has an access to edit the comment.
 This is an example of Broken Access Control and it can lead to major consequences such as unauthorised data update, data integrity issues etc.
 
 ### Access the administration section of the store and delete all the 5-star reviews ###
@@ -46,8 +46,8 @@ This is an example of Broken Access Control and it can lead to major consequence
 ![Successful Deletion of Review](./screenshots/Task1/fiveStarFeedbackDeletion.png)
 
 #### Summary ####
-This is an example of Vertical Privilege Escalation where a user access the admin rights or priviliges and perform operation which is authorised for the user above the hierachy of current user. In this scenario, an application fails to identify the user and logged it via query (|| 1=1) which evaluates to true and returns probably the default value. 
-Apart from that the user is also able to perform the operations that are exclusive to the users with certain access/privliges indicating that the access or abstraction is not enforced correctly.
+This is an example of Vertical Privilege Escalation where a user access the admin rights or priviliges and perform operation which is unauthorised for the user of current hierachy. In this scenario, an application failed to identify the user and logged it via query (|| 1=1) which evaluates to true and returned probably the default value. 
+Apart from that, the current user is also able to perform the operations that are exclusive to the other users with different access/privliges indicating that the data access and abstraction is not enforced correctly.
 
 
 ## Security Misconfiguration ##
@@ -147,7 +147,7 @@ _Note: Change End of Line Sequnce to LF_
 
 1. **Looking at all six vulnerability categories you explored today, which one do you think is most likely to already exist in a project you have worked on, and why? Be honest and specific.**
 
-- I have observed the Security Misconfiguration in one of my projects where we are missed Security Configuration. The developers have missed adding nosniff in X-Content-Type-Options and same-origin for Cross-Origin-Resource-Policy. It was later fixed after the security audit. This was introduced as the emphasis is more on delivering on time, instead of delivering secure and right application.
+- I have observed the Security Misconfiguration in one of my projects. The developers have missed adding nosniff in X-Content-Type-Options and same-origin for Cross-Origin-Resource-Policy. It was later fixed after the security audit. This was introduced as the emphasis is more on delivering on time, instead of delivering secure and right application.
 
 2. **Five of the six categories (all except A03) have appeared on previous OWASP Top 10 lists. Why do these well-known, well-documented vulnerabilities keep being shipped in production software year after year? Consider the perspective of developers, testers, and management separately.**
 
@@ -162,7 +162,7 @@ _Note: Change End of Line Sequnce to LF_
 3. **A03 (Supply Chain) and A06 (Insecure Design) are both categories where the vulnerability often exists before any functional code is written. What does this tell you about where security testing needs to start in the SDLC?**
 
 - For the Supply Chain, the risk begins when the development team chooses third-party libraries (npm packages, NuGet packages, maven dependencies), CI/CD tool, frameworks etc. The risk introduced at this level will keep moving to the later stages of the development. Similarly, the design-level risks are being inherited to later stages. As the application progress in development, these risks and vulnerabilities will deeply embed in the system and it will also be expensive to fix. The later the stage, more the efforts and cost. As we already discussed that the security concerns are more likely to left unaddressed in the scenario where we have fast-paced delivery schedules and required business logic is pending.
-It is effectient and cheap to have security testing at the earliest stage of application development.
+Hence, It is always effectient and cheap to have security testing at the earliest stage of application development.
 
 4. **If you had to pick just three test cases to add to every project's regression suite based on what you discovered today, what would they be and why?**
 
