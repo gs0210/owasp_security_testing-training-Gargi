@@ -83,13 +83,13 @@ Apart from that the user is also able to perform the operations that are exclusi
 1. FTP Directory
 ![alt text](screenshots/Task2/ftp.png)
 
-*File with potential risk:* incident-support.kdbx
+*File with potential risk:* incident-support.kdbx  
 kdbx files are kind of password database which stores all the credentials including database, server, instances etc. If someone access to this one, it will lead to exploitation of application server and database.
 
 2. Encryption Keys
 ![alt text](screenshots/Task2/encryptionKeys.png)
 
-*File with potential risk:* premium.key
+*File with potential risk:* premium.key  
 This seems to be the encrypted version of the private key, JWT token or some authentication method. Once decrypted, it can lead to unauthorised access.
 
 
@@ -121,7 +121,7 @@ This seems to be the encrypted version of the private key, JWT token or some aut
 1. Send the feedback as an anonymous user
 2. Fetch the cURL of the request
 3. Execute it 10 times via Postman or shell script
-* File for reference : `day1-owasp-workshop/script/customerFeedback.sh`
+* File for reference : `day1-owasp-workshop/script/customerFeedback.sh`  
 _Note: Change End of Line Sequnce to LF_
 
 #### Execution Screenshot ####
